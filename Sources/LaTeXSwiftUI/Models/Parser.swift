@@ -41,32 +41,32 @@ internal struct Parser {
   
   /// An inline equation component.
   static let inline = EquationComponent(
-    regex: #/\$(.*?)\$/#,
-    terminatingRegex: #/\$/#,
+    regex: #/\$(.*?)\$/#.dotMatchesNewlines(),
+    terminatingRegex: #/\$/#.dotMatchesNewlines(),
     equation: .inlineEquation)
   
   /// An TeX-style block equation component.
   static let tex = EquationComponent(
-    regex: #/\$\$\s*(.*?)\s*\$\$/#,
-    terminatingRegex: #/\$\$/#,
+    regex: #/\$\$\s*(.*?)\s*\$\$/#.dotMatchesNewlines(),
+    terminatingRegex: #/\$\$/#.dotMatchesNewlines(),
     equation: .texEquation)
   
   /// A block equation.
   static let block = EquationComponent(
-    regex: #/\\\[\s*(.*?)\s*\\\]/#,
-    terminatingRegex: #/\\\]/#,
+    regex: #/\\\[\s*(.*?)\s*\\\]/#.dotMatchesNewlines(),
+    terminatingRegex: #/\\\]/#.dotMatchesNewlines(),
     equation: .blockEquation)
   
   /// A named equation component.
   static let named = EquationComponent(
-    regex: #/\\begin{equation}\s*(.*?)\s*\\end{equation}/#,
-    terminatingRegex: #/\\end{equation}/#,
+    regex: #/\\begin{equation}\s*(.*?)\s*\\end{equation}/#.dotMatchesNewlines(),
+    terminatingRegex: #/\\end{equation}/#.dotMatchesNewlines(),
     equation: .namedEquation)
   
   /// A named no number equation component.
   static let namedNoNumber = EquationComponent(
-    regex: #/\\begin{equation\*}\s*(.*?)\s*\\end{equation\*}/#,
-    terminatingRegex: #/\\end{equation\*}/#,
+    regex: #/\\begin{equation\*}\s*(.*?)\s*\\end{equation\*}/#.dotMatchesNewlines(),
+    terminatingRegex: #/\\end{equation\*}/#.dotMatchesNewlines(),
     equation: .namedNoNumberEquation)
   
   // Order matters
