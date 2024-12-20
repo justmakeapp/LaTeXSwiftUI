@@ -12,10 +12,11 @@ let package = Package(
   products: [
     .library(
       name: "LaTeXSwiftUI",
+      type: .dynamic,
       targets: ["LaTeXSwiftUI"]),
   ],
   dependencies: [
-     .package(url: "https://github.com/colinc86/MathJaxSwift", from: "3.4.0"),
+     .package(path: "../MathJaxSwift"),
      .package(url: "https://github.com/exyte/SVGView", from: "1.0.4"),
      .package(url: "https://github.com/Kitura/swift-html-entities", from: "4.0.1")
   ],
