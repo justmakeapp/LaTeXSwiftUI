@@ -13,6 +13,7 @@ let package = Package(
   products: [
     .library(
       name: "LaTeXSwiftUI",
+      type: .dynamic,
       targets: ["LaTeXSwiftUI"]),
   ],
   dependencies: [
